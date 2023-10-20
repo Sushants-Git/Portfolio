@@ -1,0 +1,266 @@
+/*--- Navbar ---*/
+
+.mobile-menu-wrapper {
+  display: none;
+  cursor: pointer;
+}
+
+.logo-wrapper,
+.nav ul li {
+  cursor: pointer;
+}
+
+.nav-container {
+  z-index: 2;
+  top: 3.8em;
+  width: 85vw;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.nav {
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-wrapper {
+  margin-right: 30px;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 2.65rem;
+  font-size: 1.5rem;
+}
+
+.contact-me {
+  background: linear-gradient(
+    90deg,
+    #4df0ad 0%,
+    #54e2aa 27.08%,
+    #52d4a6 50.07%,
+    #4dc09f 79.13%,
+    #43af98 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*--- Hero ---*/
+
+.hero-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  width: 97vw;
+  height: 94vh;
+  margin: 25px;
+  border-radius: 57px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.hero p {
+  margin: 0;
+}
+
+.hero-container {
+  width: 93%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro-main {
+  font-size: clamp(2rem, 10vw, 5.6rem);
+  line-height: 1;
+}
+
+.intro-extra {
+  font-size: clamp(1.3rem, 2vw, 2.3rem);
+  margin-top: 0.5em;
+}
+
+.mobile-name {
+  display: none;
+}
+
+.star-section img {
+  width: clamp(2rem, 10vw, 86px);
+}
+
+.star-section {
+  max-width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-star {
+  display: flex;
+}
+
+.blue-star {
+  margin-right: clamp(1em, 15vw, 11em);
+}
+
+.pink-star {
+  margin-top: 26px;
+}
+
+.hero-container {
+  position: relative;
+}
+
+.scroll {
+  position: absolute;
+  font-size: 1rem;
+  left: 10%;
+  bottom: -30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-text {
+  margin-bottom: 13px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.black-scroll {
+  z-index: -1;
+}
+/*--- Utility Classes ---*/
+
+.bold {
+  font-family: "SSP Bold";
+}
+
+.space {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: bold;
+}
+
+.blue-gradient {
+  background: url(./assets/gradients/blue-gradient.png);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-gradient {
+  background: url(./assets/gradients/pink-gradient.png);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-gradient {
+  background: url(./assets/gradients/green-gradient.png);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  /*--- Navbar ---*/
+  .nav-items {
+    display: none;
+  }
+
+  .mobile-menu-wrapper {
+    display: block;
+  }
+
+  /*--- Hero ---*/
+  .intro-extra {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  /*--- Navbar ---*/
+  .nav-container {
+    z-index: 2;
+    top: 3.8em;
+    max-width: 75%;
+    position: fixed;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  .mobile-menu-wrapper {
+    display: block;
+    user-select: none;
+  }
+
+  .mobile-menu {
+    width: 50px;
+    user-select: none;
+  }
+
+  /*--- Hero ---*/
+  .hero {
+    margin: 12px;
+    border-radius: 26px;
+  }
+
+  .star-section img {
+    width: 86px;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .desktop-name {
+    display: none;
+  }
+
+  .mobile-name {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .intro-main {
+    text-align: center;
+    margin-top: 36px;
+  }
+
+  .intro-main-container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .scroll {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}

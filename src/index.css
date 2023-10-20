@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+/* font-family: 'Space Grotesk', sans-serif; */
+
+@font-face {
+  font-family: "SSP Regular";
+  src: url("./assets/Fonts/SSP/SourceSerifPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "SSP Bold";
+  src: url("./assets/Fonts/SSP/SourceSerifPro-Bold.otf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "SSP Regular", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: white;
+}
