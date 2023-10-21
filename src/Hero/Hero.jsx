@@ -2,7 +2,47 @@ import HeroContent from "./HeroContent";
 import StarSection from "./StarSection";
 import Scroll from "./Scroll";
 
+import useWindowDimensions from "../CustomHooks/useWindowDimensions";
+import { useEffect } from "react";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
+
+import { mobileFrom, to, desktopFrom } from "./animations/util";
+
 function Hero() {
+  const viewPortWidth = useWindowDimensions().width;
+
+  useEffect(function () {
+    gsap.registerPlugin(ScrollTrigger);
+    if (viewPortWidth <= 640) {
+      gsap.fromTo(".hero", mobileFrom, to);
+    } else {
+      gsap.fromTo(".hero", desktopFrom, to);
+    }
+
+    let lenis;
+
+    const initSmoothScrolling = () => {
+      lenis = new Lenis({
+        lerp: 0.1,
+        smooth: true,
+      });
+
+      lenis.on("scroll", () => ScrollTrigger.update());
+
+      const scrollFn = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(scrollFn);
+      };
+
+      requestAnimationFrame(scrollFn);
+    };
+
+    initSmoothScrolling();
+  }, []);
+
   return (
     <header className="hero-wrapper">
       <div className="hero">

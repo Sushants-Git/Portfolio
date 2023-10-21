@@ -13,7 +13,7 @@
 .nav-container {
   z-index: 2;
   top: 3.8em;
-  width: 85vw;
+  width: 87vw;
   position: fixed;
   margin: auto;
   left: 0;
@@ -131,7 +131,7 @@
   position: absolute;
   font-size: 1rem;
   left: 10%;
-  bottom: -30px;
+  bottom: -50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,6 +145,14 @@
 .black-scroll {
   z-index: -1;
 }
+
+/*--- About ---*/
+.about{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
 /*--- Utility Classes ---*/
 
 .bold {
