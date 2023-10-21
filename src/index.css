@@ -31,7 +31,7 @@ body {
 }
 
 #root {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -42,4 +42,39 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/*--- Utility Classes ---*/
+
+.bold {
+  font-family: "SSP Bold";
+}
+
+.space {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: bold;
+}
+
+.blue-gradient {
+  background: url(./assets/gradients/blue-gradient.png);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-gradient {
+  background: url(./assets/gradients/pink-gradient.png);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-gradient {
+  background: url(./assets/gradients/green-gradient.png);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

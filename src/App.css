@@ -111,7 +111,7 @@
   align-items: center;
 }
 
-.top-star {
+.top-stars {
   display: flex;
 }
 
@@ -147,45 +147,52 @@
 }
 
 /*--- About ---*/
-.about{
+.about {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: black;
+  display: flex;
+  /* border: 2px solid green; */
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
 }
 
-/*--- Utility Classes ---*/
-
-.bold {
-  font-family: "SSP Bold";
+.about p {
+  margin: 0;
 }
 
-.space {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: bold;
+.about-wrapper {
+  display: flex;
+  gap: 30vw;
 }
 
-.blue-gradient {
-  background: url(./assets/gradients/blue-gradient.png);
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.left-side-title,
+.right-side-title {
+  font-size: clamp(2rem, 47vw, 65px);
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.3rem;
 }
 
-.pink-gradient {
-  background: url(./assets/gradients/pink-gradient.png);
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.left-side-content {
+  font-size: clamp(1rem, 20vw, 28px);
+  width: 32vw;
 }
 
-.green-gradient {
-  background: url(./assets/gradients/green-gradient.png);
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.toolkit-list ul {
+  font-size: clamp(1rem, 20vw, 28px);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+.toolkit-list li {
+  display: flex;
+  align-items: center;
+  gap: 37px;
 }
 
 @media (max-width: 768px) {
@@ -201,6 +208,26 @@
   /*--- Hero ---*/
   .intro-extra {
     display: none;
+  }
+
+  /*--- About ---*/
+  .about-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .left-side-content {
+    font-size: clamp(1rem, 20vw, 28px);
+    width: 64vw;
+  }
+
+  .left-side-title,
+  .right-side-title {
+    justify-content: center;
+  }
+
+  .left-side-content {
+    text-align: center;
   }
 }
 
@@ -270,5 +297,21 @@
     left: 0;
     right: 0;
     margin: auto;
+  }
+
+  /*--- About ---*/
+  .about-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .left-side-content {
+    font-size: 23px;
+    width: 70vw;
+  }
+
+  .left-side-title,
+  .right-side-title {
+    justify-content: center;
   }
 }

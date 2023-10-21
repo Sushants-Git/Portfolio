@@ -28,7 +28,7 @@ function StarSection() {
 
   return (
     <div className="star-section">
-      <div className="top-star">
+      <div className="top-stars">
         <img className="blue-star" src={blueStar} alt="blue-colored-star-svg" />
         <img
           className="green-star"
