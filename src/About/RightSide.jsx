@@ -18,7 +18,6 @@ function RightSide() {
           trigger: ".right-side-title",
           toggleActions: "play none none reset",
           start: "top +=90%",
-          end: "",
         },
         fontSize: "65px",
         opacity: 1,
