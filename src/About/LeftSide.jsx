@@ -18,7 +18,7 @@ function LeftSide() {
           toggleActions: "play none none reset",
           start: "top +=90%",
         },
-        fontSize: "65px",
+        fontSize: "64px",
         opacity: 1,
       }
     );
