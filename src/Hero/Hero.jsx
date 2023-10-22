@@ -5,11 +5,11 @@ import Scroll from "./Scroll";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 import { useEffect } from "react";
 
+import { mobileFrom, to, desktopFrom } from "./animations/util";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
-
-import { mobileFrom, to, desktopFrom } from "./animations/util";
 
 function Hero() {
   const viewPortWidth = useWindowDimensions().width;

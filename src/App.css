@@ -152,7 +152,7 @@
   min-height: 100vh;
   background-color: black;
   display: flex;
-  /* border: 2px solid green; */
+  padding-top: 20px;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
@@ -164,19 +164,20 @@
 
 .about-wrapper {
   display: flex;
-  gap: 30vw;
+  gap: 35vw;
 }
 
 .left-side-title,
 .right-side-title {
-  font-size: clamp(2rem, 47vw, 65px);
+  font-size: clamp(2rem, 5vw, 65px);
   display: flex;
   align-items: center;
   margin-bottom: 2.3rem;
+  width: 65px;
 }
 
 .left-side-content {
-  font-size: clamp(1rem, 20vw, 28px);
+  font-size: clamp(1rem, 20vw, 26px);
   width: 32vw;
 }
 
@@ -223,6 +224,7 @@
 
   .left-side-title,
   .right-side-title {
+    font-size: 65px;
     justify-content: center;
   }
 
@@ -312,6 +314,7 @@
 
   .left-side-title,
   .right-side-title {
+    font-size: 65px;
     justify-content: center;
   }
 }
