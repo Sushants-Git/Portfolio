@@ -413,6 +413,14 @@
     align-items: center;
     gap: 28px;
   }
+
+  .toolkit-list{
+    font-size: clamp(1rem, 20vw, 28px);
+  }
+
+  .toolkit-list ul{
+    gap: 1.4rem;
+  }
 }
 
 @media (max-width: 640px) {
