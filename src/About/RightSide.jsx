@@ -1,29 +1,39 @@
 import blueOpenBracket from "../assets/brackets/blue-opening.svg";
 import blueCloseBracket from "../assets/brackets/blue-closing.svg";
 import arrow from "../assets/brackets/arrow.svg";
+import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
 import { useEffect } from "react";
 
 function RightSide() {
-  useEffect(function () {
-    gsap.fromTo(
-      ".right-side-title",
-      {
-        fontSize: "3vw",
-        opacity: 0,
-      },
-      {
-        scrollTrigger: {
-          trigger: ".right-side-title",
-          toggleActions: "play none none reset",
-          start: "top +=90%",
+  const viewPortWidth = useWindowDimensions().width;
+  useEffect(
+    function () {
+      let animation = gsap.fromTo(
+        ".right-side-title p",
+        {
+          fontSize: "3vw",
+          opacity: 0,
         },
-        fontSize: "65px",
-        opacity: 1,
-      }
-    );
-  }, []);
+        {
+          scrollTrigger: {
+            trigger: ".right-side-title",
+            toggleActions: "play none none reset",
+            start: "top +=90%",
+          },
+          fontSize: "65px",
+          opacity: 1,
+        }
+      );
+
+      return () => {
+        animation.kill();
+        animation = null;
+      };
+    },
+    [viewPortWidth]
+  );
 
   return (
     <div className="right-side">

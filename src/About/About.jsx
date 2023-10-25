@@ -3,7 +3,7 @@ import LeftSide from "./LeftSide";
 
 function About() {
   return (
-    <section className="about">
+    <section id="about" className="about">
       <div className="about-wrapper">
         <div className="left-side-wrapper">
           <LeftSide />

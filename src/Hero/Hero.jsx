@@ -44,7 +44,7 @@ function Hero() {
   }, []);
 
   return (
-    <header className="hero-wrapper">
+    <header id="hero" className="hero-wrapper">
       <div className="hero">
         <div className="hero-container">
           <HeroContent />
