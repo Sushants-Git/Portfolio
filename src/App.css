@@ -1,8 +1,14 @@
 /*--- Navbar ---*/
 
-.mobile-menu-wrapper {
+.mobile-menu-wrapper,
+.nav-items-menu {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   display: none;
   cursor: pointer;
+}
+
+.logo-wrapper {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 .logo-wrapper,
@@ -295,7 +301,7 @@
 /*--- Footer ---*/
 
 .footer {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   background-color: black;
   color: rgba(255, 255, 255, 0.721);
   padding-top: 3rem;
@@ -311,7 +317,39 @@
   }
 
   .mobile-menu-wrapper {
+    position: relative;
     display: block;
+  }
+
+  .nav-items-menu {
+    position: absolute;
+    display: none;
+    background-color: black;
+    top: 45px;
+    right: 5px;
+    width: 160px;
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
+    border: 2px solid white;
+    opacity: 0;
+  }
+
+  a[href="#about"] {
+    padding-top: 20px;
+  }
+
+  a[href="mailto:sushantsgml@gmail.com"] {
+    padding-bottom: 20px;
+  }
+
+  .nav-items-menu ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-items-menu ul li {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   /*--- Hero ---*/
@@ -414,12 +452,35 @@
     gap: 28px;
   }
 
-  .toolkit-list{
+  .toolkit-list {
     font-size: clamp(1rem, 20vw, 28px);
   }
 
-  .toolkit-list ul{
+  .toolkit-list ul {
     gap: 1.4rem;
+  }
+
+  .mobile-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bar-upper {
+    display: block;
+    width: 47px;
+    height: 4px;
+    background-color: white;
+  }
+
+  .bar-lower {
+    display: block;
+    align-self: flex-end;
+    width: 26px;
+    height: 4px;
+    background-color: white;
   }
 }
 
@@ -437,11 +498,6 @@
 
   .logo {
     width: 50px;
-  }
-
-  .mobile-menu-wrapper {
-    display: block;
-    user-select: none;
   }
 
   .mobile-menu {
