@@ -1,6 +1,7 @@
 import HeroContent from "./HeroContent";
 import StarSection from "./StarSection";
 import Scroll from "./Scroll";
+import Socials from "./Socials";
 
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 import { useEffect } from "react";
@@ -50,6 +51,7 @@ function Hero() {
           <HeroContent />
           <StarSection />
           <Scroll />
+          <Socials />
         </div>
       </div>
     </header>
