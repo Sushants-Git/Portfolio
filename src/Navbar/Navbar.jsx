@@ -2,7 +2,7 @@ import logo from "../assets/sushant-mishra-logo.svg";
 import { gsap } from "gsap";
 import { useState } from "react";
 
-function Navbar() {
+function Navbar({navRef,navMenuRef}) {
   let [menuClicked, setMenuClicked] = useState(false);
   function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
@@ -60,7 +60,7 @@ function Navbar() {
   }
 
   return (
-    <div className="nav-container">
+    <div className="nav-container" ref={navRef}>
       <nav className="nav" onClick={(e) => scroll(e)}>
         <div className="logo-wrapper">
           <a href="#hero">
@@ -86,7 +86,7 @@ function Navbar() {
         <div className="mobile-menu-wrapper" onClick={() => menuOnClick()}>
           <span className="bar-upper"></span>
           <span className="bar-lower"></span>
-          <div className="nav-items-menu">
+          <div className="nav-items-menu" ref={navMenuRef}>
             <ul>
               <a href="#about">
                 <li>About</li>
