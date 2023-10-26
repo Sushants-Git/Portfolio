@@ -46,11 +46,7 @@ function LeftSide() {
           Everyone has their superpower, for some, it's music; for others, it's
           sports; for me, it has always been computers.
         </p>
-        <p>
-          I don’t know when the simple desire of impressing my teachers with my
-          “cool” tech skills, transformed into a full-time passion for creating
-          even “cooler” web applications and designs.
-        </p>
+        <p>I love building stuff, learning new things, meeting new people. I just love tech in general. So, if you have something cool to build feel free to reach out!!</p>
       </div>
     </div>
   );
