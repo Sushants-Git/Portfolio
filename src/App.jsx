@@ -3,14 +3,15 @@ import Hero from "./Hero/Hero.jsx";
 import About from "./About/About.jsx";
 import Projects from "./Projects/Projects.jsx";
 import Footer from "./Footer/Footer.jsx";
-
+import useWindowDimensions from "./CustomHooks/useWindowDimensions.jsx";
 import "./App.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function App() {
-  let animation = null;
+  let animation = useRef(null);
+  let height = useWindowDimensions().height;
   let [menuClicked, setMenuClicked] = useState(false);
   gsap.registerPlugin(ScrollTrigger);
 
@@ -54,34 +55,45 @@ function App() {
     });
   }
 
-  useEffect(function () {
-    let prevScrollPos = window.scrollY;
+  useEffect(
+    function () {
+      let prevScrollPos = window.scrollY;
 
-    window.onscroll = function () {
-      const currentScrollPos = window.scrollY;
-      animation?.kill();
-      animation = null;
-      if (prevScrollPos > currentScrollPos) {
-        animation = gsap.to(".nav-container", {
-          top: "3.8em",
-          display: "block",
-          opacity: 1,
-        });
-      } else {
-        animation = gsap.to(".nav-container", {
-          scrollTrigger: {
-            trigger: ".hero",
-          },
-          opacity: 0,
-        });
+      window.onscroll = function () {
+        const currentScrollPos = window.scrollY;
 
-        animation = gsap.to(".nav-container", {
-          display: "none",
-        });
-      }
-      prevScrollPos = currentScrollPos;
-    };
-  }, []);
+        animation.current?.kill();
+        animation.current = null;
+        animation.current = gsap.timeline();
+        if (prevScrollPos > currentScrollPos) {
+          console.log("preScrollPos", prevScrollPos);
+          animation.current.to(".nav-container", {
+            top: "3.8em",
+            display: "block",
+            opacity: 1,
+          });
+        } else {
+          if (currentScrollPos < window.innerHeight) {
+            animation.current.to(".nav-container", {
+              top: "3.8em",
+              display: "block",
+              opacity: 1,
+            });
+          } else {
+            animation.current.to(".nav-container", {
+              opacity: 0,
+            });
+
+            animation.current.to(".nav-container", {
+              display: "none",
+            });
+          }
+        }
+        prevScrollPos = currentScrollPos;
+      };
+    },
+    [window.innerHeight]
+  );
 
   return (
     <>
