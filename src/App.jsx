@@ -3,7 +3,7 @@ import Hero from "./Hero/Hero.jsx";
 import About from "./About/About.jsx";
 import Projects from "./Projects/Projects.jsx";
 import Footer from "./Footer/Footer.jsx";
-import useWindowDimensions from "./CustomHooks/useWindowDimensions";
+
 import "./App.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 function App() {
   let animation = null;
   let [menuClicked, setMenuClicked] = useState(false);
-  const viewPortHeight = useWindowDimensions().height;
   gsap.registerPlugin(ScrollTrigger);
 
   function menuOnClick() {
@@ -62,22 +61,21 @@ function App() {
       const currentScrollPos = window.scrollY;
       animation?.kill();
       animation = null;
-      animation = gsap.timeline();
       if (prevScrollPos > currentScrollPos) {
-        animation.to(".nav-container", {
+        animation = gsap.to(".nav-container", {
           top: "3.8em",
           display: "block",
           opacity: 1,
         });
       } else {
-        animation.to(".nav-container", {
+        animation = gsap.to(".nav-container", {
           scrollTrigger: {
             trigger: ".hero",
           },
           opacity: 0,
         });
 
-        animation.to(".nav-container", {
+        animation = gsap.to(".nav-container", {
           display: "none",
         });
       }

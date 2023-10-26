@@ -3,13 +3,15 @@ import pinkCloseBracket from "../assets/brackets/pink-closing.svg";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function LeftSide() {
+  let animation = useRef(null);
   const viewPortWidth = useWindowDimensions().width;
+
   useEffect(
     function () {
-      let animation = gsap.fromTo(
+      animation.current = gsap.fromTo(
         ".left-side-title",
         {
           fontSize: "3vw",
@@ -27,8 +29,8 @@ function LeftSide() {
       );
 
       return () => {
-        animation.kill();
-        animation = null;
+        animation.current?.kill();
+        animation.current = null;
       };
     },
     [viewPortWidth]
@@ -46,7 +48,11 @@ function LeftSide() {
           Everyone has their superpower, for some, it's music; for others, it's
           sports; for me, it has always been computers.
         </p>
-        <p>I love building stuff, learning new things, meeting new people. I just love tech in general. So, if you have something cool to build feel free to reach out!!</p>
+        <p>
+          I love building stuff, learning new things, meeting new people. I just
+          love tech in general. So, if you have something cool to build feel
+          free to reach out!!
+        </p>
       </div>
     </div>
   );

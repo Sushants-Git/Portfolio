@@ -1,6 +1,4 @@
 import logo from "../assets/sushant-mishra-logo.svg";
-import { gsap } from "gsap";
-import { useState } from "react";
 
 function Navbar({menuOnClick }) {
   function scrollToSection(sectionId) {

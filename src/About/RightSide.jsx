@@ -4,13 +4,15 @@ import arrow from "../assets/brackets/arrow.svg";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function RightSide() {
   const viewPortWidth = useWindowDimensions().width;
+  let animation = useRef(null);
+
   useEffect(
     function () {
-      let animation = gsap.fromTo(
+      animation.current = gsap.fromTo(
         ".right-side-title p",
         {
           fontSize: "3vw",
@@ -28,8 +30,8 @@ function RightSide() {
       );
 
       return () => {
-        animation.kill();
-        animation = null;
+        animation.current?.kill();
+        animation.current = null;
       };
     },
     [viewPortWidth]

@@ -1,7 +1,7 @@
 const mobileFrom = {
   width: "97vw",
   height: "94vh",
-  margin: "18px",
+  margin: "10px",
   borderRadius: "26px",
 };
 
