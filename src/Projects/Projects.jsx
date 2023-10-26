@@ -82,7 +82,7 @@ function Projects() {
           </a>
         </div>
         <div className="project-content">
-          <a href={project.Live}>
+          <a href={project.Live} target="_blank">
             <p className="project-name">{project.projectName}</p>
           </a>
           <p className="project-text">{project.projectText}</p>
