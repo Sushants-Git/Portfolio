@@ -63,33 +63,21 @@ function App() {
       animation?.kill();
       animation = null;
       if (prevScrollPos > currentScrollPos) {
-        // if (currentScrollPos < viewPortHeight) {
         animation = gsap.to(".nav-container", {
           top: "3.8em",
           display: "block",
           opacity: 1,
         });
-        // }
-        // else {
-        //   animation = gsap
-        //     .timeline()
-        //     .to(".nav-container", {
-        //       top: "3.8em",
-        //       display: "block",
-        //       opacity: 1,
-        //     })
-        //     .to(".nav-container", {
-        //       delay: 1,
-        //       opacity: 0,
-        //     });
-        // }
       } else {
         animation = gsap.to(".nav-container", {
           scrollTrigger: {
             trigger: ".hero",
           },
-          display: "none",
           opacity: 0,
+        });
+
+        animation = gsap.to(".nav-container", {
+          display: "none",
         });
       }
       prevScrollPos = currentScrollPos;
