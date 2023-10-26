@@ -328,26 +328,40 @@
     top: 45px;
     right: 5px;
     width: 160px;
-    border: 2px solid white;
+    border: 1px solid white;
+    overflow: hidden;
+    border-radius: 10%;
     opacity: 0;
   }
 
+  a[href="#about"]:hover,
+  a[href="#projects"]:hover,
+  a[href="https://sushantshash.hashnode.dev/"]:hover
+  {
+    background-color: whitesmoke;
+    color:black;
+  }
+
+  a[href="mailto:sushantsgml@gmail.com"]:hover{
+    background-color: rgb(32, 31, 31);
+  }
+
   a[href="#about"] {
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
   a[href="mailto:sushantsgml@gmail.com"] {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   .nav-items-menu ul {
     flex-direction: column;
-    gap: 5px;
+    gap: 0px;
   }
 
   .nav-items-menu ul li {
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 35px;
   }
 
   /*--- Hero ---*/
