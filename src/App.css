@@ -328,8 +328,6 @@
     top: 45px;
     right: 5px;
     width: 160px;
-    /* padding-top: 20px;
-    padding-bottom: 20px; */
     border: 2px solid white;
     opacity: 0;
   }
@@ -507,7 +505,7 @@
 
   /*--- Hero ---*/
   .hero {
-    margin: 12px;
+    margin: 18px;
     border-radius: 26px;
   }
 
