@@ -1,5 +1,4 @@
 /*--- Navbar ---*/
-
 .mobile-menu-wrapper,
 .nav-items-menu {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -387,7 +386,7 @@
   }
 
   .left-side-content {
-    font-size: clamp(1rem, 20vw, 28px);
+    font-size: clamp(1rem, 3.8vw, 28px);
     width: 64vw;
   }
 

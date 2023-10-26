@@ -4,9 +4,12 @@ import About from "./About/About.jsx";
 import Projects from "./Projects/Projects.jsx";
 import Footer from "./Footer/Footer.jsx";
 import "./App.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
 function App() {
+  gsap.registerPlugin(ScrollTrigger);
   const navRef = useRef(null);
   const navMenuRef = useRef(null);
 
@@ -18,18 +21,26 @@ function App() {
     window.onscroll = function () {
       const currentScrollPos = window.scrollY;
       if (prevScrollPos > currentScrollPos) {
-        navbar.style.top = "3.8em";
-        navbarMenu.style.display = "block"
+        gsap.to(".nav-container", {
+          top: "3.8em",
+          display: "block",
+          opacity: 1,
+        });
       } else {
-        navbar.style.top = `-${navbar.offsetHeight}px`;
-        navbarMenu.style.display = "none"
+        gsap.to(".nav-container", {
+          scrollTrigger: {
+            trigger: ".hero",
+          },
+          display: "none",
+          opacity: 0,
+        });
       }
       prevScrollPos = currentScrollPos;
     };
   }, []);
   return (
     <>
-      <Navbar navRef={navRef} navMenuRef={navMenuRef}/>
+      <Navbar navRef={navRef} navMenuRef={navMenuRef} />
       <Hero />
       <About />
       <Projects />
