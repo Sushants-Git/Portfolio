@@ -61,12 +61,10 @@ function App() {
 
       window.onscroll = function () {
         const currentScrollPos = window.scrollY;
-
         animation.current?.kill();
         animation.current = null;
         animation.current = gsap.timeline();
         if (prevScrollPos > currentScrollPos) {
-          console.log("preScrollPos", prevScrollPos);
           animation.current.to(".nav-container", {
             top: "3.8em",
             display: "block",
