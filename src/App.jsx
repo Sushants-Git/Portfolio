@@ -62,21 +62,22 @@ function App() {
       const currentScrollPos = window.scrollY;
       animation?.kill();
       animation = null;
+      animation = gsap.timeline();
       if (prevScrollPos > currentScrollPos) {
-        animation = gsap.to(".nav-container", {
+        animation.to(".nav-container", {
           top: "3.8em",
           display: "block",
           opacity: 1,
         });
       } else {
-        animation = gsap.to(".nav-container", {
+        animation.to(".nav-container", {
           scrollTrigger: {
             trigger: ".hero",
           },
           opacity: 0,
         });
 
-        animation = gsap.to(".nav-container", {
+        animation.to(".nav-container", {
           display: "none",
         });
       }
