@@ -20,7 +20,7 @@ function Socials() {
   return (
     <div className="socials-wrapper">
       {socialsData.map((social) => (
-        <a href={social.url} target="_blank">
+        <a key={`${social.url}-Hero`} href={social.url} target="_blank">
           <img src={social.image} alt="" />
         </a>
       ))}

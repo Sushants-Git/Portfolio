@@ -22,7 +22,7 @@ function Footer() {
       <p>&copy; 2023 Sushant Mishra</p>
       <div className="socials-wrapper-footer">
         {socialsData.map((social) => (
-          <a href={social.url} target="_blank">
+          <a key={`${social.url}-Footer`} href={social.url} target="_blank">
             <img src={social.image} alt="" />
           </a>
         ))}
