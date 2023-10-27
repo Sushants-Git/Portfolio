@@ -22,7 +22,7 @@ const projects = [
     toolsUsed: ["React", "Figma"],
     LinkImage: [YoutubeImage, GithubImage, LiveLink],
     Link: [
-      "https://example.com",
+      "https://www.youtube.com/watch?v=e6AruCsCuew",
       "https://github.com/Sushants-Git/keeper",
       "https://keeper-sushant.netlify.app/",
     ],
@@ -36,7 +36,7 @@ const projects = [
     toolsUsed: ["JS", "Chrome API"],
     LinkImage: [YoutubeImage, GithubImage],
     Link: [
-      "https://example.com",
+      "https://www.youtube.com/watch?v=thTurAtNi2I",
       "https://github.com/Sushants-Git/Youtube-Controller",
     ],
     Live: "https://github.com/Sushants-Git/Youtube-Controller",
@@ -49,7 +49,7 @@ const projects = [
     toolsUsed: ["JS", "Restful API"],
     LinkImage: [YoutubeImage, GithubImage, LiveLink],
     Link: [
-      "https://example.com",
+      "https://www.youtube.com/watch?v=6Ncns21uPHk",
       "https://github.com/Sushants-Git/Movie-Watchlist",
       "https://movie-watchlist-by-sushant.netlify.app/",
     ],
@@ -63,7 +63,7 @@ const projects = [
     toolsUsed: ["React", "GSAP", "Figma"],
     LinkImage: [YoutubeImage, GithubImage, LiveLink],
     Link: [
-      "https://example.com",
+      "https://www.youtube.com/watch?v=Wh9frqb9Eio",
       "https://github.com/Sushants-Git/Portfolio",
       "https://sushantmishra.netlify.app/",
     ],
@@ -74,7 +74,7 @@ const projects = [
 function Projects() {
   const viewPortWidth = useWindowDimensions().width;
   const projectDiv = projects.map((project) => (
-    <div className="project-wrapper">
+    <div className="project-wrapper" key={project.projectName}>
       <div className="project">
         <div className="project-image">
           <a href={project.Live} target="_blank">
@@ -87,13 +87,17 @@ function Projects() {
           </a>
           <p className="project-text">{project.projectText}</p>
           <p className="project-toolused">
-            {project.toolsUsed.map((toolused) => (
-              <span>{toolused}</span>
+            {project.toolsUsed.map((toolused, index) => (
+              <span key={`${project.Live}-${toolused}`}>{toolused}</span>
             ))}
           </p>
           <div className="project-links">
             {project.LinkImage.map((link, index) => (
-              <a href={project.Link[index]} target="_blank">
+              <a
+                key={project.Link[index]}
+                href={project.Link[index]}
+                target="_blank"
+              >
                 <img src={link} />
               </a>
             ))}
