@@ -42,20 +42,6 @@ const projects = [
     Live: "https://github.com/Sushants-Git/Youtube-Controller",
   },
   {
-    imagePath: MovieWatchlist,
-    projectName: "Movie Watchlist",
-    projectText:
-      "A simple Moive watch list app where you can add movies you want to watch and remove them when you finish watching them.",
-    toolsUsed: ["JS", "Restful API"],
-    LinkImage: [YoutubeImage, GithubImage, LiveLink],
-    Link: [
-      "https://www.youtube.com/watch?v=6Ncns21uPHk",
-      "https://github.com/Sushants-Git/Movie-Watchlist",
-      "https://movie-watchlist-by-sushant.netlify.app/",
-    ],
-    Live: "https://movie-watchlist-by-sushant.netlify.app/",
-  },
-  {
     imagePath: Portfolio,
     projectName: "Portfolio",
     projectText:
@@ -68,6 +54,20 @@ const projects = [
       "https://sushantmishra.netlify.app/",
     ],
     Live: "https://sushantmishra.netlify.app/",
+  },
+  {
+    imagePath: MovieWatchlist,
+    projectName: "Movie Watchlist",
+    projectText:
+      "A simple Moive watch list app where you can add movies you want to watch and remove them when you finish watching them.",
+    toolsUsed: ["JS", "Restful API"],
+    LinkImage: [YoutubeImage, GithubImage, LiveLink],
+    Link: [
+      "https://www.youtube.com/watch?v=6Ncns21uPHk",
+      "https://github.com/Sushants-Git/Movie-Watchlist",
+      "https://movie-watchlist-by-sushant.netlify.app/",
+    ],
+    Live: "https://movie-watchlist-by-sushant.netlify.app/",
   },
 ];
 
