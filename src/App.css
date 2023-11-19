@@ -344,17 +344,24 @@
   padding-top: 3rem;
 }
 
+.design-wrapper{
+  max-width: 50%;
+}
+
 .designs-wrapper {
   margin-left: 4.5rem;
   margin-right: 4.5rem;
   display: flex;
-  flex-direction: column;
-  gap: 4.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  /* flex-direction: column; */
+  /* gap: 1rem; */
 }
 
 .designs-wrapper img {
-  width: 100%;
-  border-radius: 24px;
+  width: 90%;
+  margin: 1rem;
+  border-radius: 12px;
 }
 
 /*--- Footer ---*/
@@ -607,8 +614,14 @@
     margin-left: 0;
   }
 
+  .design-wrapper{
+    max-width: 90%;
+  }
+
   .designs-wrapper {
     display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
     gap: 50px;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -617,6 +630,7 @@
   .designs-wrapper img {
     width: 100%;
     border-radius: 24px;
+    margin: 0rem;
   }
 }
 
@@ -649,8 +663,9 @@
 
   /*--- Hero ---*/
   .hero {
-    margin: 10px;
-    border-radius: 26px;
+    /* margin: 10px; */
+    margin: 0px;
+    border-radius: 0px;
   }
 
   .star-section img {
@@ -706,6 +721,10 @@
   }
 
   /*--- Designs ---*/
+
+  .designs .title {
+    font-size: 65px;
+  }
 
   .designs {
     margin-top: -100px;

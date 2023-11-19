@@ -11,6 +11,10 @@ function LeftSide() {
 
   useEffect(
     function () {
+      if (viewPortWidth <= 640) {
+        animation.current = null
+        return
+      }
       animation.current = gsap.fromTo(
         ".left-side-title",
         {

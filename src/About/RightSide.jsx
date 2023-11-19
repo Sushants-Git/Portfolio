@@ -12,6 +12,10 @@ function RightSide() {
 
   useEffect(
     function () {
+      if (viewPortWidth <= 640) {
+        animation.current = null
+        return
+      }
       animation.current = gsap.fromTo(
         ".right-side-title p",
         {

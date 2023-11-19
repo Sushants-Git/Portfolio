@@ -2,20 +2,24 @@ import Image1 from "./Design Images/Image-1.png"
 import Image2 from "./Design Images/Image-2.png"
 import Image3 from "./Design Images/Image-3.png"
 import Image4 from "./Design Images/Image-4.png"
-import Image5 from "./Design Images/Image-5.png"
 
 import indigoOpenBracket from "../assets/brackets/indigo-opening.svg";
 import indigoCloseBracket from "../assets/brackets/indigo-closing.svg";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Designs() {
+    let animation = useRef(null)
     const viewPortWidth = useWindowDimensions().width;
     useEffect(
         function () {
-            let animation = gsap.fromTo(
+            if (viewPortWidth <= 640) {
+                animation.current = null
+                return
+            }
+            animation = gsap.fromTo(
                 "#designs-title-wrapper",
                 {
                     fontSize: "3vw",
@@ -40,7 +44,7 @@ export default function Designs() {
         [viewPortWidth]
     );
 
-    const designs = [{ imagePath: Image1 }, { imagePath: Image2 }, { imagePath: Image3 }, { imagePath: Image4 }, { imagePath: Image5 }]
+    const designs = [{ imagePath: Image1 }, { imagePath: Image2 }, { imagePath: Image3 }, { imagePath: Image4 }]
 
     const designDiv = designs.map((design) => (
         <div className="design-wrapper">

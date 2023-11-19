@@ -1,8 +1,8 @@
 const mobileFrom = {
-  width: "97vw",
-  height: "96vh",
-  margin: "10px",
-  borderRadius: "26px",
+  width: "100vw",
+  height: "100vh",
+  margin: "0px",
+  borderRadius: "0px",
 };
 
 const to = {
