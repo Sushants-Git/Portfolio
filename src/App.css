@@ -22,8 +22,8 @@
   padding-left: 2vw;
   padding-right: 2vw;
   border-radius: 80px;
-  padding-top: 2vw;
-  padding-bottom: 2vw;
+  padding-top: 1.2vw;
+  padding-bottom: 1.2vw;
   z-index: 2;
   top: 3.8em;
   width: 91vw;
@@ -55,7 +55,7 @@
   list-style: none;
   display: flex;
   gap: 2.65rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .contact-me {
@@ -398,6 +398,13 @@
   .nav-container {
     padding-left: 3vw;
     padding-right: 3vw;
+
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+
+  .nav ul {
+    font-size: 1.5rem;
   }
 
   .mobile-menu-wrapper {
@@ -590,20 +597,19 @@
 
   .designs {
     background-color: black;
-    margin-top: -60px;
   }
 
   .designs .title-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 6rem;
+    margin-top: -4rem;
     margin-left: 0;
   }
 
   .designs-wrapper {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -622,11 +628,14 @@
     backdrop-filter: blur(10px);
     z-index: 2;
     top: 3.8em;
-    max-width: 75%;
+    max-width: 80%;
     position: fixed;
     margin: auto;
     left: 0;
     right: 0;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   .logo {
@@ -694,5 +703,20 @@
   .right-side-title {
     font-size: 65px;
     justify-content: center;
+  }
+
+  /*--- Designs ---*/
+
+  .designs {
+    margin-top: -100px;
+  }
+
+  .designs-wrapper img {
+    border-radius: 12px;
+  }
+
+
+  .designs .title-wrapper {
+    padding-top: 6rem;
   }
 }
