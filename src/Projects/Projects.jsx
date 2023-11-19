@@ -41,34 +41,34 @@ const projects = [
     ],
     Live: "https://github.com/Sushants-Git/Youtube-Controller",
   },
-  {
-    imagePath: Portfolio,
-    projectName: "Portfolio",
-    projectText:
-      "Yep, this site that you are currently seeing right now!! One of my cleanest projects both in terms of design and code!!",
-    toolsUsed: ["React", "GSAP", "Figma"],
-    LinkImage: [YoutubeImage, GithubImage, LiveLink],
-    Link: [
-      "https://www.youtube.com/watch?v=Wh9frqb9Eio",
-      "https://github.com/Sushants-Git/Portfolio",
-      "https://sushantmishra.netlify.app/",
-    ],
-    Live: "https://sushantmishra.netlify.app/",
-  },
-  {
-    imagePath: MovieWatchlist,
-    projectName: "Movie Watchlist",
-    projectText:
-      "A simple Moive watch list app where you can add movies you want to watch and remove them when you finish watching them.",
-    toolsUsed: ["JS", "Restful API"],
-    LinkImage: [YoutubeImage, GithubImage, LiveLink],
-    Link: [
-      "https://www.youtube.com/watch?v=6Ncns21uPHk",
-      "https://github.com/Sushants-Git/Movie-Watchlist",
-      "https://movie-watchlist-by-sushant.netlify.app/",
-    ],
-    Live: "https://movie-watchlist-by-sushant.netlify.app/",
-  },
+  // {
+  //   imagePath: Portfolio,
+  //   projectName: "Portfolio",
+  //   projectText:
+  //     "Yep, this site that you are currently seeing right now!! One of my cleanest projects both in terms of design and code!!",
+  //   toolsUsed: ["React", "GSAP", "Figma"],
+  //   LinkImage: [YoutubeImage, GithubImage, LiveLink],
+  //   Link: [
+  //     "https://www.youtube.com/watch?v=Wh9frqb9Eio",
+  //     "https://github.com/Sushants-Git/Portfolio",
+  //     "https://sushantmishra.netlify.app/",
+  //   ],
+  //   Live: "https://sushantmishra.netlify.app/",
+  // },
+  // {
+  //   imagePath: MovieWatchlist,
+  //   projectName: "Movie Watchlist",
+  //   projectText:
+  //     "A simple Moive watch list app where you can add movies you want to watch and remove them when you finish watching them.",
+  //   toolsUsed: ["JS", "Restful API"],
+  //   LinkImage: [YoutubeImage, GithubImage, LiveLink],
+  //   Link: [
+  //     "https://www.youtube.com/watch?v=6Ncns21uPHk",
+  //     "https://github.com/Sushants-Git/Movie-Watchlist",
+  //     "https://movie-watchlist-by-sushant.netlify.app/",
+  //   ],
+  //   Live: "https://movie-watchlist-by-sushant.netlify.app/",
+  // },
 ];
 
 function Projects() {
@@ -147,21 +147,3 @@ function Projects() {
 }
 
 export default Projects;
-
-/* <div className="project-wrapper">
-        <div className="project">
-        <div className="project-image">
-            <img src={projects[0].imagePath} alt="project image" />
-        </div>
-        <div className="project-content">
-            <p className="project-name">{projects[0].projectName}</p>
-            <p className="project-text">{projects[0].projectText}</p>
-            <p className="project-toolused">{projects[0].toolsUsed[0]}</p>
-            <div className="project-links">
-            {projects[0].Links.map((link) => (
-                <img src={link} />
-            ))}
-            </div>
-        </div>
-        </div>
-    </div> */

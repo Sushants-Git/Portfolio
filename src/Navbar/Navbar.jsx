@@ -1,6 +1,6 @@
 import logo from "../assets/sushant-mishra-logo.svg";
 
-function Navbar({menuOnClick }) {
+function Navbar({ menuOnClick }) {
   function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -10,7 +10,7 @@ function Navbar({menuOnClick }) {
 
   function scroll(e) {
     const sectionId = e.target.parentNode.getAttribute("href").substring(1);
-    if (sectionId === "about" || sectionId === "projects") {
+    if (sectionId === "about" || sectionId === "projects" || sectionId === "designs") {
       e.preventDefault();
       scrollToSection(sectionId);
     }
@@ -32,6 +32,9 @@ function Navbar({menuOnClick }) {
             <a href="#projects">
               <li>Projects</li>
             </a>
+            <a href="#designs">
+              <li>Designs</li>
+            </a>
             <a href="https://sushantshash.hashnode.dev/" target="_blank">
               <li>Blogs</li>
             </a>
@@ -50,6 +53,9 @@ function Navbar({menuOnClick }) {
               </a>
               <a href="#projects">
                 <li>Projects</li>
+              </a>
+              <a href="#designs">
+                <li>Designs</li>
               </a>
               <a href="https://sushantshash.hashnode.dev/" target="_blank">
                 <li>Blogs</li>
