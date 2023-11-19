@@ -10,7 +10,11 @@ function Navbar({ menuOnClick }) {
 
   function scroll(e) {
     const sectionId = e.target.parentNode.getAttribute("href").substring(1);
-    if (sectionId === "about" || sectionId === "projects" || sectionId === "designs") {
+    if (
+      sectionId === "about" ||
+      sectionId === "projects" ||
+      sectionId === "designs"
+    ) {
       e.preventDefault();
       scrollToSection(sectionId);
     }

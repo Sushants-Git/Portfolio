@@ -59,12 +59,14 @@
 }
 
 .contact-me {
-  background: linear-gradient(90deg,
-      #4df0ad 0%,
-      #54e2aa 27.08%,
-      #52d4a6 50.07%,
-      #4dc09f 79.13%,
-      #43af98 100%);
+  background: linear-gradient(
+    90deg,
+    #4df0ad 0%,
+    #54e2aa 27.08%,
+    #52d4a6 50.07%,
+    #4dc09f 79.13%,
+    #43af98 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -344,7 +346,7 @@
   padding-top: 3rem;
 }
 
-.design-wrapper{
+.design-wrapper {
   max-width: 50%;
 }
 
@@ -396,7 +398,6 @@
 }
 
 @media (max-width: 768px) {
-
   /*--- Navbar ---*/
   .nav-items {
     display: none;
@@ -435,7 +436,8 @@
   a[href="#about"]:hover,
   a[href="#projects"]:hover,
   a[href="#designs"]:hover,
-  a[href="https://sushantshash.hashnode.dev/"]:hover {
+  a[href="https://sushantshash.hashnode.dev/"]:hover
+  {
     background-color: whitesmoke;
     color: black;
   }
@@ -614,7 +616,7 @@
     margin-left: 0;
   }
 
-  .design-wrapper{
+  .design-wrapper {
     max-width: 90%;
   }
 
@@ -635,7 +637,6 @@
 }
 
 @media (max-width: 640px) {
-
   /*--- Navbar ---*/
   .nav-container {
     background-color: rgba(0, 0, 0, 0.321);
@@ -733,7 +734,6 @@
   .designs-wrapper img {
     border-radius: 12px;
   }
-
 
   .designs .title-wrapper {
     padding-top: 6rem;
