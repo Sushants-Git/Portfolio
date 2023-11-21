@@ -13,7 +13,7 @@ const to = {
     end: "+=60% +=30%",
   },
   width: "100vw",
-  height: "100vh",
+  height: "100svh",
   margin: "0px",
   borderRadius: "0px",
 };
