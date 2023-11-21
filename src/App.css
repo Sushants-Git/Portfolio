@@ -76,7 +76,7 @@
 
 .hero-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -664,8 +664,10 @@
 
   /*--- Hero ---*/
   .hero {
-    /* margin: 10px; */
-    margin: 0px;
+    width: 100vw;
+    height: 95svh;
+    margin: 10px;
+    /* margin: 0px; */
     border-radius: 0px;
   }
 
