@@ -1,25 +1,24 @@
-import Image1 from "./Design Images/Image-1.png";
-import Image2 from "./Design Images/Image-2.png";
-import Image3 from "./Design Images/Image-3.png";
-import Image4 from "./Design Images/Image-4.png";
-
 import indigoOpenBracket from "../assets/brackets/indigo-opening.svg";
 import indigoCloseBracket from "../assets/brackets/indigo-closing.svg";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useState, useLayoutEffect, useRef, useMemo } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Designs() {
-  let animation = useRef(null);
+  const [fetchedImages, setFetchedImages] = useState(false);
+  const [designs, setDesigns] = useState(null);
+  const animation = useRef(null);
   const viewPortWidth = useWindowDimensions().width;
-  useEffect(
+
+  useLayoutEffect(
     function () {
       if (viewPortWidth <= 640) {
         animation.current = null;
         return;
       }
-      animation = gsap.fromTo(
+      animation.current = gsap.fromTo(
         "#designs-title-wrapper",
         {
           fontSize: "3vw",
@@ -37,29 +36,66 @@ export default function Designs() {
       );
 
       return () => {
-        animation.kill();
-        animation = null;
+        animation.current?.kill();
+        animation.current = null;
       };
     },
     [viewPortWidth]
   );
 
-  const designs = [
-    { imagePath: Image1 },
-    { imagePath: Image2 },
-    { imagePath: Image3 },
-    { imagePath: Image4 },
-  ];
+  const importImages = async () => {
+    const imagePaths = import.meta.glob("./Design Images/*.{png,jpg,jpeg,svg}");
+    const images = {};
 
-  const designDiv = designs.map((design) => (
-    <div className="design-wrapper">
-      <div className="design">
-        <div className="design-image">
-          <img src={design.imagePath} alt="design image" />
-        </div>
-      </div>
-    </div>
-  ));
+    for (const path in imagePaths) {
+      const imageModule = await imagePaths[path]();
+      images[path] = imageModule.default || imageModule;
+    }
+
+    const imageArray = Object.values(images).map((design) => {
+      return {
+        imagePath: design,
+      };
+    });
+
+    setFetchedImages(true);
+    setDesigns((prevValue) => imageArray);
+
+    return imageArray;
+  };
+
+  if (!fetchedImages) {
+    importImages();
+  }
+
+  // function popup(currentElement) {
+  //   console.log(currentElement.target);
+  //   gsap.to(currentElement.target, {
+  //     width: "100vw",
+  //   });
+
+  //   console.log(currentElement.target)
+  // }
+
+  const designDiv = useMemo(
+    function () {
+      return fetchedImages
+        ? designs.map((design) => (
+            <div className="design-wrapper" key={uuidv4()}>
+              <div className="design">
+                <div className="design-image">
+                  <img
+                    src={design.imagePath}
+                    alt="design image"
+                  />
+                </div>
+              </div>
+            </div>
+          ))
+        : null;
+    },
+    [fetchedImages]
+  );
 
   return (
     <section id="designs" className="designs">

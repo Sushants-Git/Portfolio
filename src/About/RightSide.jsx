@@ -4,17 +4,17 @@ import arrow from "../assets/brackets/arrow.svg";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 function RightSide() {
   const viewPortWidth = useWindowDimensions().width;
   let animation = useRef(null);
 
-  useEffect(
+  useLayoutEffect(
     function () {
       if (viewPortWidth <= 640) {
-        animation.current = null
-        return
+        animation.current = null;
+        return;
       }
       animation.current = gsap.fromTo(
         ".right-side-title p",
@@ -52,7 +52,7 @@ function RightSide() {
         <ul>
           <li>
             <img src={arrow} className="arrow" alt="bullet-point-arrow-style" />
-            <p>Javascript (ES6+)</p>
+            <p>Javascript</p>
           </li>
           <li>
             <img src={arrow} className="arrow" alt="bullet-point-arrow-style" />

@@ -3,17 +3,17 @@ import pinkCloseBracket from "../assets/brackets/pink-closing.svg";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 function LeftSide() {
   let animation = useRef(null);
   const viewPortWidth = useWindowDimensions().width;
 
-  useEffect(
+  useLayoutEffect(
     function () {
       if (viewPortWidth <= 640) {
-        animation.current = null
-        return
+        animation.current = null;
+        return;
       }
       animation.current = gsap.fromTo(
         ".left-side-title",
@@ -49,11 +49,19 @@ function LeftSide() {
       </div>
       <div className="left-side-content">
         <p>
-          Everyone has their superpower, for some, it's music; for others, it's
-          sports; for me, it has always been computers.
+          Everyone has their superpower,
+          <br />
+          For some, it's <span className="pink-gradient">Music</span>;
+          <br />
+          For others, it's <span className="blue-gradient">Sports</span>;
+          <br />
+          For me?
+          <br />
+          It has always been <span className="green-gradient">Computers</span>.
         </p>
+        <br />
         <p>
-          I love building stuff, learning new things, meeting new people. I just
+          I love <span className="pink-gradient">building stuff</span>, <span className="blue-gradient">learning new things</span>, <span className="green-gradient">meeting new people</span>. I just
           love tech in general. So, if you have something cool to build feel
           free to reach out!!
         </p>

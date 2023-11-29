@@ -11,7 +11,7 @@ import greenCloseBracket from "../assets/brackets/green-closing.svg";
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
 
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 const projects = [
   {
@@ -26,7 +26,7 @@ const projects = [
       "https://github.com/Sushants-Git/keeper",
       "https://keeper-sushant.netlify.app/",
     ],
-    Live: "https://keeper-sushant.netlify.app/",
+    Live: "https://www.youtube.com/watch?v=e6AruCsCuew",
   },
   {
     imagePath: YoutubeController,
@@ -39,7 +39,7 @@ const projects = [
       "https://www.youtube.com/watch?v=thTurAtNi2I",
       "https://github.com/Sushants-Git/Youtube-Controller",
     ],
-    Live: "https://github.com/Sushants-Git/Youtube-Controller",
+    Live: "https://www.youtube.com/watch?v=thTurAtNi2I",
   },
   // {
   //   imagePath: Portfolio,
@@ -71,19 +71,51 @@ const projects = [
   // },
 ];
 
+let gradients = ["green", "pink", "blue"];
+let borderColor = ["#39F8B1", "#FEAADF", "#2995BA"];
+
 function Projects() {
   const viewPortWidth = useWindowDimensions().width;
-  const projectDiv = projects.map((project) => (
+  const projectDiv = projects.map((project, mainIndex) => (
     <div className="project-wrapper" key={project.projectName}>
       <div className="project">
         <div className="project-image">
           <a href={project.Live} target="_blank">
-            <img src={project.imagePath} alt="project image" />
+            <img
+              src={project.imagePath}
+              alt="project image"
+              style={{
+                border: `1px solid ${
+                  borderColor[mainIndex % borderColor.length]
+                }`,
+              }}
+              // onMouseEnter={(currentElement) =>
+              //   console.log(
+              //     (currentElement.target.style.border = `1px solid ${
+              //       borderColor[mainIndex % borderColor.length]
+              //     }`)
+              //   )
+              // }
+
+              // onMouseLeave={(currentElement) =>
+              //   console.log(
+              //     (currentElement.target.style.border = `none`)
+              //   )
+              // }
+            />
           </a>
         </div>
         <div className="project-content">
           <a href={project.Live} target="_blank">
-            <p className="project-name">{project.projectName}</p>
+            <p className="project-name">
+              <span
+                className={`${
+                  gradients[mainIndex % gradients.length]
+                }-gradient`}
+              >
+                {project.projectName}
+              </span>
+            </p>
           </a>
           <p className="project-text">{project.projectText}</p>
           <p className="project-toolused">
@@ -107,7 +139,7 @@ function Projects() {
     </div>
   ));
 
-  useEffect(
+  useLayoutEffect(
     function () {
       let animation = gsap.fromTo(
         "#projects-title-wrapper",

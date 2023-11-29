@@ -4,7 +4,7 @@ import Scroll from "./Scroll";
 import Socials from "./Socials";
 
 import useWindowDimensions from "../CustomHooks/useWindowDimensions";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 import { mobileFrom, to, desktopFrom } from "./animations/util";
 
@@ -16,7 +16,7 @@ function Hero() {
   let animation = useRef(null);
   const viewPortWidth = useWindowDimensions().width;
 
-  useEffect(
+  useLayoutEffect(
     function () {
       gsap.registerPlugin(ScrollTrigger);
       if (viewPortWidth <= 640) {
