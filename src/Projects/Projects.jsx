@@ -1,5 +1,6 @@
 import KeeperImage from "./Images/Keeper.png";
 import YoutubeController from "./Images/Youtube Controller.png";
+import DejaVu from "./Images/Deja Vu.png";
 import MovieWatchlist from "./Images/Movie Watchlist.png";
 import Portfolio from "./Images/Portfolio.png";
 import GithubImage from "./Images/svg/Github.svg";
@@ -14,6 +15,19 @@ import { gsap } from "gsap";
 import { useLayoutEffect } from "react";
 
 const projects = [
+  {
+    imagePath: DejaVu,
+    projectName: "Deja Vu",
+    projectText:
+      "Never struggle to remember your bookmarks again! Deja Vu, an AI-powered Chrome extension, seamlessly finds bookmarks—just jot down any vague details, and it effortlessly locates them for you.",
+    toolsUsed: ["JS", "Chrome API"],
+    LinkImage: [YoutubeImage, GithubImage],
+    Link: [
+      "https://www.youtube.com/watch?v=1E9y_XeGhkY&t=4s",
+      "https://github.com/Sushants-Git/Deja-Vu",
+    ],
+    Live: "https://www.youtube.com/watch?v=1E9y_XeGhkY&t=4s",
+  },
   {
     imagePath: KeeperImage,
     projectName: "Keeper",
