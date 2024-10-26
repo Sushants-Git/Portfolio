@@ -31,6 +31,11 @@
   margin: auto;
   left: 0;
   right: 0;
+  transition: background-color 0.3s ease;
+}
+
+.nav-container:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .nav-container a {
@@ -58,6 +63,15 @@
   font-size: 1.8rem;
 }
 
+.nav ul li {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav ul li:hover {
+  transform: translateY(-2px);
+}
+
 .contact-me {
   background: linear-gradient(
     90deg,
@@ -70,6 +84,11 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.contact-me:hover {
+  opacity: 0.8;
 }
 
 /*--- Hero ---*/
@@ -102,16 +121,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  animation: fadeIn 1s ease-out;
 }
 
 .intro-main {
   font-size: clamp(2rem, 10vw, 5.6rem);
   line-height: 1;
+  animation: slideIn 1s ease-out;
 }
 
 .intro-extra {
   font-size: clamp(1.3rem, 2vw, 2.3rem);
   margin-top: 0.5em;
+  animation: slideIn 1s ease-out;
 }
 
 .mobile-name {
@@ -202,6 +224,7 @@
 .about-wrapper {
   display: flex;
   gap: 35vw;
+  animation: fadeIn 1s ease-out;
 }
 
 .left-side-title,
@@ -272,6 +295,7 @@
   display: flex;
   flex-direction: column;
   gap: 4.5rem;
+  animation: fadeIn 1s ease-out;
 }
 
 .project {
@@ -288,11 +312,11 @@
   width: 50vw;
   max-width: 700px;
   border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .project-image img:hover {
   transform: scale(1.05);
-  transition: transform 0.15s ease-in-out;
 }
 
 .project-content {
@@ -369,6 +393,12 @@
   width: 90%;
   margin: 1rem;
   border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.designs-wrapper img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /*--- Footer ---*/
@@ -436,6 +466,14 @@
     overflow: hidden;
     border-radius: 10%;
     opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+  }
+
+  .nav-items-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   a[href="#about"]:hover,
@@ -751,3 +789,50 @@
     padding-top: 6rem;
   }
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hero-container {
+  animation: fadeIn 1s ease-out;
+}
+
+.intro-main, .intro-extra {
+  animation: slideIn 1s ease-out;
+}
+
+.about-wrapper, .projects-wrapper, .designs-wrapper {
+  animation: fadeIn 1s ease-out;
+}
+
+/*--- Designs ---*/
+/* ... existing designs CSS ... */
+
+.fullscreen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.fullscreen-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* ... rest of the CSS ... */

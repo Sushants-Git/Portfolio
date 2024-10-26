@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 export default function Designs() {
   const [fetchedImages, setFetchedImages] = useState(false);
   const [designs, setDesigns] = useState(null);
+  const [fullscreenImage, setFullscreenImage] = useState(null);
   const animation = useRef(null);
   const viewPortWidth = useWindowDimensions().width;
 
@@ -68,14 +69,13 @@ export default function Designs() {
     importImages();
   }
 
-  // function popup(currentElement) {
-  //   console.log(currentElement.target);
-  //   gsap.to(currentElement.target, {
-  //     width: "100vw",
-  //   });
+  const openFullscreen = (imagePath) => {
+    setFullscreenImage(imagePath);
+  };
 
-  //   console.log(currentElement.target)
-  // }
+  const closeFullscreen = () => {
+    setFullscreenImage(null);
+  };
 
   const designDiv = useMemo(
     function () {
@@ -87,6 +87,7 @@ export default function Designs() {
                   <img
                     src={design.imagePath}
                     alt="design image"
+                    onClick={() => openFullscreen(design.imagePath)}
                   />
                 </div>
               </div>
@@ -94,7 +95,7 @@ export default function Designs() {
           ))
         : null;
     },
-    [fetchedImages]
+    [fetchedImages, designs]
   );
 
   return (
@@ -105,6 +106,11 @@ export default function Designs() {
         <img src={indigoCloseBracket} alt="closing bracket" />
       </div>
       <div className="designs-wrapper">{designDiv}</div>
+      {fullscreenImage && (
+        <div className="fullscreen-image" onClick={closeFullscreen}>
+          <img src={fullscreenImage} alt="Fullscreen design" />
+        </div>
+      )}
     </section>
   );
 }
