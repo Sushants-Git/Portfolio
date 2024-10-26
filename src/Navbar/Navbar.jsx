@@ -39,7 +39,7 @@ function Navbar({ menuOnClick }) {
             <a href="#designs">
               <li>Designs</li>
             </a>
-            <a href="https://drive.google.com/file/d/15-l3YbZtGdwefV4tgOWRFICWuJj_peX_/view?usp=sharing" target="_blank">
+            <a href="https://drive.google.com/file/d/1xG4H3BSXjNGph9ytU6vIrDUyHg113G4z/view?usp=sharing" target="_blank">
               <li>Resume</li>
             </a>
             <a href="mailto:sushantsgml@gmail.com">
@@ -61,8 +61,8 @@ function Navbar({ menuOnClick }) {
               <a href="#designs">
                 <li>Designs</li>
               </a>
-              <a href="https://sushantshash.hashnode.dev/" target="_blank">
-                <li>Blogs</li>
+              <a href="https://drive.google.com/file/d/1xG4H3BSXjNGph9ytU6vIrDUyHg113G4z/view?usp=sharing" target="_blank">
+                <li>Resume</li>
               </a>
               <a href="mailto:sushantsgml@gmail.com">
                 <li className="bold contact-me">Say Hello</li>
